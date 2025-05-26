@@ -2,7 +2,10 @@ import tkinter as tk
 from tkinter import ttk, simpledialog, messagebox, filedialog
 import calendar
 import csv
+
 import datetime
+
+
 
 class BoardingApp(tk.Tk):
     def __init__(self):
@@ -30,6 +33,7 @@ class BoardingApp(tk.Tk):
         style = ttk.Style(self)
         style.configure("Treeview", borderwidth=1, relief="solid")
         style.configure("Treeview.Heading", borderwidth=1, relief="solid")
+
         self.tree = ttk.Treeview(self, columns=["Date", "Notes"] + self.cages, show="headings")
         self.tree.pack(fill=tk.BOTH, expand=True)
         self.tree.bind("<Double-1>", self.on_double_click)
@@ -70,6 +74,7 @@ class BoardingApp(tk.Tk):
             row[name] = ""
         self.refresh_tree()
 
+
     def book_stay(self):
         cage = simpledialog.askstring("Book Stay", "Cage name")
         if not cage or cage not in self.cages:
@@ -97,6 +102,7 @@ class BoardingApp(tk.Tk):
             if start_date <= row_date <= end_date:
                 row[cage] = animal
         self.refresh_tree()
+
 
     def on_double_click(self, event):
         item = self.tree.identify_row(event.y)
