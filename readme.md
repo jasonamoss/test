@@ -10,7 +10,10 @@ interface to manage cages and bookings for an animal boarding business.
 - Add additional cages at runtime
 - Join two cages into a single large cage or split joined cages
 - Double-click any cell to edit its contents
+
+- Quickly book a cage for multiple days using the **Book Stay** button
 - Save the calendar to a CSV file
+
 
 ## Requirements
 
